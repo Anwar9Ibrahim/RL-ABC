@@ -41,7 +41,7 @@ acc_elegant_rl_training/
 ├── config_manager.py         # Configuration loading and CLI argument parsing
 ├── config.json               # Configuration file (JSON format)
 ├── config.yaml               # Configuration file (YAML format)
-├── machine.lte               # Elegant lattice file for the VEPP-5 beamline
+├── machine.lte               # Elegant lattice file for the test beamline
 ├── track.ele                 # Elegant command file (beam and simulation settings)
 ├── requirements.txt          # Python dependencies (pip)
 ├── pyproject.toml            # Project metadata and dependencies
