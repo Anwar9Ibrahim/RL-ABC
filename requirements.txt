@@ -1,0 +1,34 @@
+# Core Python and ML/RL libraries for ACC Elegant RL Training
+# Install with: pip install -r requirements.txt
+
+# Core ML/RL Dependencies
+gymnasium>=0.29.1
+stable-baselines3>=2.0.0
+torch>=2.0.0
+
+# Scientific Computing
+numpy>=1.21.0
+pandas>=1.3.0
+scipy>=1.7.0
+scikit-learn>=1.0.0
+
+# Visualization
+matplotlib>=3.5.0
+holoviews>=1.15.0
+bokeh>=2.4.0
+plotly>=5.0.0
+
+# Logging and Monitoring
+tensorboard>=2.7.0
+
+# Utilities
+pillow>=9.0.0
+pyyaml>=5.4
+PyYAML>=6.0
+
+# Optional: GPU acceleration (comment out if not needed)
+# cuda-toolkit  # For NVIDIA GPU support
+
+# Optional: Jupyter support
+jupyter>=1.0.0
+ipython>=7.0.0

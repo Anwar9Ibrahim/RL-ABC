@@ -1,0 +1,75 @@
+# RL Configuration File for ACC Elegant Training
+# This file contains all configurable parameters for the RLConfig class
+# You can modify these values and run: python train.py --config config.yaml
+
+# Platform Configuration
+platform:
+  os_type: "linux"  # "darwin" for macOS, "linux" for Linux, "windows" for Windows
+  elegant_path: ""
+  sdds_path: ""
+
+# Elegant Simulation Configuration
+simulation:
+  override_dynamic_command: True
+  overridden_command: "elegant"  # Can also be "mpirun -np 24 Pelegant"
+  input_beamline_file: "machine.lte" 
+  input_beam_file: "track"
+  output_beamline_file: "updated_machine_{seed}.lte"
+  beamline_name: "machine"
+  elegant_input_filename: "elegant_input_{seed}.lte"
+
+# Environment Configuration
+environment:
+  stage: null  # For staged learning (set to None for standard learning)
+  n_bins: 5  # Number of bins for 2D histogram in state representation
+  reset_specific_keys_bool: false  # Reset Hkick, Vkick, and FSE
+  init_num_particles: 1000  # Initial number of particles for simulation
+
+# Training Configuration
+training:
+  seed: 0
+  cpu: false  # Set to true to force CPU usage (otherwise uses GPU/MPS if available)
+  load_model: True  # Load pre-trained model weights for warm start
+  n_episodes: 5000000  # Number of training episodes (change to 10000 for full training)
+  max_steps: null  # Will be set dynamically from environment (leave as null)
+  greedy: 0.05  # Epsilon-greedy exploration rate
+
+# Replay Buffer Configuration
+buffer:
+  load_buffer_bool: True  # Load previous replay buffer for warm start
+  load_buffer_filepath: "big_beamline_changed.pkl"
+  save_buffer_filepath: "rbBig_beamline_original_{seed}.pkl"
+
+# Agent Configuration (DDPG)
+agent:
+  agent_type: "DDPG"  # Type of agent to use
+  alpha: 0.0001  # Actor learning rate (1e-4)
+  beta: 0.001  # Critic learning rate (1e-3)
+  batch_size: 128  # Batch size for training
+  gamma: 0.99  # Discount factor
+  tau: 0.005  # Soft update parameter for target networks
+  max_size: 1000000  # Maximum replay buffer size
+  noise_type: "gaussian"  # Type of exploration noise ("gaussian" or "ou")
+  log_interval: 100  # Logging interval
+  eval_interval: 1000  # Evaluation interval
+  convert: true  # Convert agent outputs from [-1,1] to action ranges
+
+# Logging and Results Configuration
+logging:
+  results_path: "results_{seed}/"  # Relative path - will be combined with current working directory
+  tb_file_name: "big_beamline_original_{seed}"  # TensorBoard log file name
+  logger_file_name: "big_beamline_original_{seed}.csv"  # CSV logger file
+  save_model_file_name: ""  # For stable_baseline3 (leave empty)
+  headers:
+    - "reward"
+    - "initial_number_of_particles"
+    - "number_of_particles"
+    - "done"
+    - "itteration"
+    - "current_element"
+    - "dict_vars"
+
+# Device Configuration
+device:
+  use_gpu: true  # Use GPU if available
+  use_mps: true  # Use MPS (Metal Performance Shaders) on macOS if available

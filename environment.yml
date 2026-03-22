@@ -1,0 +1,25 @@
+name: acc-elegant-rl
+channels:
+  - conda-forge
+  - pytorch
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - numpy
+  - pandas
+  - scikit-learn
+  - matplotlib
+  - scipy
+  - jupyter
+  - ipython
+  - cudatoolkit=11.8
+  - pytorch
+  - gymnasium
+  - stable-baselines3
+  - holoviews
+  - bokeh
+  - plotly
+  - tensorboard
+  - pillow
+  - pyyaml

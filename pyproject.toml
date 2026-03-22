@@ -1,0 +1,30 @@
+[project]
+name = "acc-elegant-rl-training"
+version = "0.1.0"
+description = "RL Training for ACC Elegant Simulations (DDPG agent for beamline optimization)"
+requires-python = ">=3.10,<3.11"
+dependencies = [
+    # Core ML/RL
+    "gymnasium>=0.29.1",
+    "stable-baselines3>=2.0.0",
+    "torch>=2.0.0",
+    # Scientific Computing
+    "numpy>=1.21.0",
+    "pandas>=1.3.0",
+    "scipy>=1.7.0",
+    "scikit-learn>=1.0.0",
+    # Visualization
+    "matplotlib>=3.5.0",
+    "holoviews>=1.15.0",
+    "bokeh>=2.4.0",
+    "plotly>=5.0.0",
+    # Logging and Monitoring
+    "tensorboard>=2.7.0",
+    # Utilities
+    "pillow>=9.0.0",
+    "pyyaml>=6.0",
+    # Jupyter kernel support (needed for notebooks)
+    "jupyter>=1.0.0",
+    "ipython>=7.0.0",
+    "ipykernel>=6.0.0",
+]

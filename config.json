@@ -1,0 +1,67 @@
+{
+  "platform": {
+    "os_type": "darwin",
+    "elegant_path": "/Users/anwar/Downloads/sdds/darwin-x86/",
+    "sdds_path": "/Users/anwar/Downloads/sdds/defns.rpn"
+  },
+  "simulation": {
+    "override_dynamic_command": false,
+    "overridden_command": "srun -n 2 Pelegant",
+    "input_beamline_file": "machine.lte",
+    "input_beam_file": "track",
+    "output_beamline_file": "updated_machine_{seed}.lte",
+    "beamline_name": "machine",
+    "elegant_input_filename": "elegant_input_{seed}.lte"
+  },
+  "environment": {
+    "stage": null,
+    "n_bins": 5,
+    "reset_specific_keys_bool": false,
+    "init_num_particles": 1000
+  },
+  "training": {
+    "seed": 0,
+    "cpu": false,
+    "load_model": false,
+    "n_episodes": 10,
+    "max_steps": null,
+    "greedy": 0.05
+  },
+  "buffer": {
+    "load_buffer_bool": false,
+    "load_buffer_filepath": "DDPG_bigbeamline_buffer.pkl",
+    "save_buffer_filepath": "rbBig_beamline_original_{seed}.pkl"
+  },
+  "agent": {
+    "agent_type": "DDPG",
+    "alpha": 0.0001,
+    "beta": 0.001,
+    "batch_size": 128,
+    "gamma": 0.99,
+    "tau": 0.005,
+    "max_size": 1000000,
+    "noise_type": "gaussian",
+    "log_interval": 100,
+    "eval_interval": 1000,
+    "convert": true
+  },
+  "logging": {
+    "results_path": "results_{seed}/",
+    "tb_file_name": "big_beamline_original_{seed}",
+    "logger_file_name": "big_beamline_original_{seed}.csv",
+    "save_model_file_name": "",
+    "headers": [
+      "reward",
+      "initial_number_of_particles",
+      "number_of_particles",
+      "done",
+      "itteration",
+      "current_element",
+      "dict_vars"
+    ]
+  },
+  "device": {
+    "use_gpu": true,
+    "use_mps": true
+  }
+}
