@@ -1,4 +1,4 @@
-# RLABC: Reinforcement Learning for Accelerator Beamline Control
+# RL-ABC: Reinforcement Learning for Accelerator Beamline Control
 
 This repository contains the source code for the RLABC framework described in:
 
