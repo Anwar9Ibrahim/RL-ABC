@@ -4,7 +4,7 @@ This repository contains the source code for the RLABC framework described in:
 
 > A. Ibrahim, F. Ratnikov, M. Kaledin, A. Petrenko, D. Derkach,
 > "RL-ABC: Reinforcement Learning for Accelerator Beamline Control,"
-> *Computer Physics Communications* (2026).
+> https://arxiv.org/abs/2510.26805
 
 RLABC is a Python framework that automatically transforms standard Elegant beamline lattice configurations into reinforcement learning environments, enabling RL-based optimization of particle accelerator beamlines.
 
